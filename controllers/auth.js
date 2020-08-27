@@ -81,7 +81,7 @@ const loginUser = async (req, res) => {
 const renewToken = async (req, res) => {
   const token = await generateToken(req.uid, req.name);
 
-  res.json({ ok: true, token });
+  res.json({ ok: true, token, uid: req.uid, name: req.name });
 };
 
 module.exports = {
